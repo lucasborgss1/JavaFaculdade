@@ -17,9 +17,13 @@ public class jogoDaVelha {
 		System.out.println("Vamos começar o jogo!");
 		System.out.println("Jogador 1 = (X)");
 		System.out.println("Jogador 2 = (O)");
+		
+		System.out.println();
+		System.out.println();
 
 		while (!encerrarJogo) {
 			System.out.println("Rodada " + rodada);
+			System.out.println();
 			if (rodada % 2 == 1) {
 				System.out.println("É a vez do jogador 1.");
 				sinal = 'X';
@@ -28,10 +32,9 @@ public class jogoDaVelha {
 				sinal = 'O';
 			}
 
-			System.out.println("Informe sua jogada: ");
-
+			linhaValida = false;
 			while (!linhaValida) {
-				System.out.println("Linha: ");
+				System.out.print("Linha: ");
 				linha = sc.nextInt();
 				if (linha >= 1 && linha <= 3) {
 					linhaValida = true;
@@ -40,8 +43,9 @@ public class jogoDaVelha {
 				}
 			}
 
+			colunaValida = false;
 			while (!colunaValida) {
-				System.out.println("Coluna: ");
+				System.out.print("Coluna: ");
 				coluna = sc.nextInt();
 				if (coluna >= 1 && coluna <= 3) {
 					colunaValida = true;
@@ -58,6 +62,8 @@ public class jogoDaVelha {
 				jogoDaVelha[linha][coluna] = sinal;
 				rodada++;
 			}
+			
+			System.out.println();
 
 			for (i = 0; i < jogoDaVelha.length; i++) {
 				for (j = 0; j < jogoDaVelha[i].length; j++) {
@@ -68,6 +74,7 @@ public class jogoDaVelha {
 				}
 				System.out.println();
 			}
+			System.out.println();
 
 			if ((jogoDaVelha[0][0] == 'X' && jogoDaVelha[0][1] == 'X' && jogoDaVelha[0][2] == 'X')
 					|| (jogoDaVelha[1][0] == 'X' && jogoDaVelha[1][1] == 'X' && jogoDaVelha[1][2] == 'X')
