@@ -12,6 +12,7 @@ public class jogoDaVelha {
 		int rodada = 1;
 		char sinal;
 		int linha = 0, coluna = 0;
+		int i = 0, j = 0;
 
 		System.out.println("Vamos começar o jogo!");
 		System.out.println("Jogador 1 = (X)");
@@ -26,30 +27,39 @@ public class jogoDaVelha {
 				System.out.println("É a vez do jogador 2.");
 				sinal = 'O';
 			}
-			
+
 			System.out.println("Informe sua jogada: ");
-			
+
 			while (!linhaValida) {
 				System.out.println("Linha: ");
 				linha = sc.nextInt();
-				if (linha <= 1 && linha >= 3) {
+				if (linha >= 1 && linha <= 3) {
 					linhaValida = true;
 				} else {
 					System.out.println("Entrada Inválida, informe (1, 2 ou 3)");
 				}
 			}
-			
+
 			while (!colunaValida) {
 				System.out.println("Coluna: ");
 				coluna = sc.nextInt();
-				if (coluna <=1 && coluna >=3) {
+				if (coluna >= 1 && coluna <= 3) {
 					colunaValida = true;
 				} else {
 					System.out.println("Entrada Inválida, informe (1, 2 ou 3)");
 				}
 			}
-			linha --;
-			coluna --;
+			
+			linha--;
+			coluna--;
+			
+			
+			for (i = 0; i < jogoDaVelha.length; i++) {
+				for (j = 0; j < jogoDaVelha[i].length; j++) {
+					System.out.print(jogoDaVelha[i][j] + "|");
+				}
+				System.out.println();
+			}
 		}
 
 		sc.close();
