@@ -17,7 +17,7 @@ public class jogoDaVelha {
 		System.out.println("Vamos começar o jogo!");
 		System.out.println("Jogador 1 = (X)");
 		System.out.println("Jogador 2 = (O)");
-		
+
 		System.out.println();
 		System.out.println();
 
@@ -62,7 +62,7 @@ public class jogoDaVelha {
 				jogoDaVelha[linha][coluna] = sinal;
 				rodada++;
 			}
-			
+
 			System.out.println();
 
 			for (i = 0; i < jogoDaVelha.length; i++) {
