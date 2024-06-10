@@ -49,14 +49,24 @@ public class jogoDaVelha {
 					System.out.println("Entrada Inválida, informe (1, 2 ou 3)");
 				}
 			}
-			
+			System.out.println();
+
 			linha--;
 			coluna--;
 			
-			
+			if (jogoDaVelha[linha][coluna] == 'X' || jogoDaVelha[linha][coluna] == 'O') {
+				System.out.println("Esta posição já foi usada, tente novamente.");
+			} else {
+				jogoDaVelha[linha][coluna] = sinal;
+				rodada ++;
+			}
+
 			for (i = 0; i < jogoDaVelha.length; i++) {
 				for (j = 0; j < jogoDaVelha[i].length; j++) {
-					System.out.print(jogoDaVelha[i][j] + "|");
+						System.out.print(jogoDaVelha[i][j]);
+						if (j < jogoDaVelha[i].length - 1) {
+							System.out.print(" | ");
+						}
 				}
 				System.out.println();
 			}
